@@ -1,0 +1,53 @@
+body {
+	font-family: 'Roboto',sans-serif;
+	background: #eee;
+	background-size: cover;
+}
+
+.logo {
+	width: 300px;
+	margin-top: 20%;
+	height: 120px;
+}
+
+.link {
+	float: right;
+	top: 20px;
+	position: absolute;
+	right: 10%;
+	text-decoration: none;
+	color: #222;
+}
+
+p {
+	color: #222;
+	margin-top: -5px;
+    font-size: 20px;
+}
+
+.out
+{
+
+}
+
+.outL
+{
+	width: 140px;
+	height: 45px;
+	outline: none;
+	background: none;
+	border:none;
+	border-radius: 5px;
+	margin: 20px;
+	transition: .3s ease;
+	background: transparent;
+	border:1px solid #ec407a;
+	color: #ec407a;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.outL:hover
+{
+	background: transparent;
+}

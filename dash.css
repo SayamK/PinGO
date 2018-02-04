@@ -1,0 +1,70 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	font-family: Lato;
+}
+
+body,html
+{
+	width: 100%;
+	height: 100%;
+
+}
+
+.left
+{
+	width: 50%;
+	height: 100%;
+	background: #32403b;
+	float: left;
+	
+}
+
+.right
+{
+	width: 50%;
+	height: 100%;
+	background: #40c4ff;
+	float: left;
+}
+
+h1
+{
+	text-align: center;
+	font-size:2.4em;
+	color: #fff;
+	margin-top: 40%;
+}
+
+p
+{
+	font-size:1.3em;
+	color: #fff;
+	font-weight: 300;
+	text-align: center;
+}
+
+button
+{
+	width: 170px;
+	height: 55px;
+	outline: none;
+	background: none;
+	border:none;
+	cursor: pointer;
+	border-radius: 5px;
+	margin: 10px 20px;
+	transition: .3s ease;
+	color: #eee;
+	display: block;
+	font-size: 15px;
+	font-weight: 900;
+	letter-spacing: 1px;
+}
+
+.l1{
+	width: 100px;
+	height: 2px;
+	background: #eee;
+}

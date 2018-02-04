@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="cities.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <script type="text/javascript" src="countries.js"></script>
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+
+var lt = 28.6139, ln=77.2090;
+
+(function(){   $(".controller").click(function(){    id = $(this).attr("id");        $(".controller-container").find(".is_current").removeClass("is_current");    $(this).addClass("is_current");    $(".card").attr('class', 'card card--' + id);    $("html").attr('class', 'bg--' + id);      });  })();
+
+
+
+//This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
+    function calcCrow(lat1, lon1, lat2, lon2) 
+    {
+      var R = 6371; // km
+      var dLat = toRad(lat2-lat1);
+      var dLon = toRad(lon2-lon1);
+      var lat1 = toRad(lat1);
+      var lat2 = toRad(lat2);
+
+      var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+      var d = R * c;
+      return d;
+    }
+
+    // Converts numeric degrees to radians
+    function toRad(Value) 
+    {
+        return Value * Math.PI / 180;
+    }
+
+
+
+
+function getJsonFromUrl() {
+  var query = location.search.substr(1);
+  var result = {};
+  query.split("&").forEach(function(part) {
+    var item = part.split("=");
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+function mycomparator(a,b) {
+  return parseInt(a.popularity) - parseInt(b.popularity);
+}
+
+
+// function get(x)	{
+// 	var str = "<div class=\"card card-1\"><div class=\"map\"style = \"background-image:url(https://maps.googleapis.com/maps/api/staticmap?center="+x.capital+"&zoom=8&size=400x180&style=saturation:90|inverse_lightness=1);\"></div><div class=\"black\"><h3>3D VIEW</h3><h3>BOOK NOW</h3></div></div>";
+// 	return str;
+// }
+
+function get(x)	{
+	var str = "<div class=\"card card-1\"><div class=\"map\"style = \"background-image:url("+encodeURI("https://maps.googleapis.com/maps/api/staticmap?center="+x.capital+"&zoom=8&size=400x180")+");\"></div><div class=\"black\"><a href = \""+encodeURI("streetview.html?city="+x.capital+", "+x.name)+"\"><h3>3D VIEW</h3></a><h3>BOOK NOW</h3></div></div>";
+	return str;
+}
+
+
+
+	$(document).ready(function()	{
+		// console.log(getJsonFromUrl());
+
+
+		var Json = getJsonFromUrl();
+		var lowTemp = parseInt(Json.temp1);
+		var highTemp = parseInt(Json.temp2);
+
+		var elevationMin = parseInt(Json.e1);
+		var elevationMax = parseInt(Json.e2);
+
+		var budget = parseInt(Json.b1);
+		var pop = parseInt(Json.pop);
+		var cont,temp;
+		pop*=2;
+		console.log("DOne");
+
+		countryData.sort(mycomparator);
+		console.log("DOne");
+
+		var html = ""
+		var cn=0;
+
+		for(var i=0;i<countryData.length ;i++)	{
+
+
+
+
+			cont = countryData[i];
+			temp = calcCrow(lt,ln,cont.lat,cont.lng);
+      		temp=temp/1.6;
+      		temp=temp+5000;
+
+
+      			if(cont.temperature>=lowTemp && 
+      			cont.temperature<=highTemp && 
+      			cont.elevation>=elevationMin &&
+      			cont.elevation<=elevationMax && temp<=budget && cont.popularity<=pop)	{
+      			cn++;
+      		      	html+=get(countryData[i]);
+
+      			if(cn==6)	break;
+      			      			// console.log(cont.name + "  :  "+ cont.temperature + " , "+cont.elevation);
+
+      		} 
+
+      		// if(cont.temperature>=lowTemp && 
+      		// 	cont.temperature<=highTemp && 
+      		// 	cont.elevation>=elevationMin &&
+      		// 	cont.elevation<=elevationMax  && temp<=budget )	{
+
+
+      			console.log(html);
+
+      		// }
+		}
+		$('.container').html(html);
+
+	});
+
+
+
+
+	</script>
+</head>
+<body>
+<h1>Suggested Cities</h1>
+<p>Have a look at the best locations that suits your preference!</p>
+<br>
+
+
+<!-- Cards-->
+<div class="container">
+<!-- 
+<div class="card card-1">
+	<div class="map"></div>
+	<div class="black">
+		<h3>3D VIEW</h3>
+		<h3>BOOK NOW</h3>
+	</div>
+</div>
+
+<div class="card card-1">
+	<div class="map"></div>
+	<div class="black">
+		<h3>3D VIEW</h3>
+		<h3>BOOK NOW</h3>
+	</div>
+</div>
+
+<div class="card card-1">
+	<div class="map"></div>
+	<div class="black">
+		<h3>3D VIEW</h3>
+		<h3>BOOK NOW</h3>
+	</div>
+</div>
+
+<div class="card card-1">
+	<div class="map"></div>
+	<div class="black">
+		<h3>3D VIEW</h3>
+		<h3>BOOK NOW</h3>
+	</div>
+</div>
+
+<div class="card card-1">
+	<div class="map"></div>
+	<div class="black">
+		<h3>3D VIEW</h3>
+		<h3>BOOK NOW</h3>
+	</div>
+</div>
+
+<div class="card card-1">
+	<div class="map"></div>
+	<div class="black">
+		<h3>3D VIEW</h3>
+		<h3>BOOK NOW</h3>
+	</div>
+</div>
+ -->
+
+
+
+</div>
+
+
+<div class="footer"></div>
+</body>
+</html>

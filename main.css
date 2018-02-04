@@ -1,0 +1,215 @@
+body,html
+{
+	width: 100%;
+	height: 100%;
+	background: #eee;
+	margin: 0;
+	font-family: Lato;
+	position: relative;
+	overflow: hidden;
+}
+
+.map {
+	width: 100%;
+	height: 85%;
+	margin-bottom: 10px;
+}
+
+.slider
+{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 150px;
+	margin: auto;
+}
+
+.options
+{
+	width: 100%;
+	height: 15%;
+	background: #172c2f;
+	position: fixed;
+	bottom: 0px;
+}
+
+.op
+{
+	float: left;
+	transition:.3s ease;
+	width: 25%;
+	height: 100%;	
+}
+
+.op:hover
+{
+	background: #101b1c;
+}
+
+.curr
+{
+	background: #101b1c;
+}
+
+.op img
+{
+	width: 60px;
+	display: block;
+	margin: auto;
+	margin-top: 30px;
+}
+
+.op p
+{
+	font-size: 1em;
+	color: #eee;
+	text-align: center;
+}
+
+.slider2
+{
+	width: 700px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 140px;
+	margin: auto;
+	
+	visibility: hidden;
+	opacity: 0;
+}
+
+.slider1
+{
+	width: 700px;
+	position: absolute;
+	left: 0;
+	margin: auto;
+	right: 0;
+	bottom: 185px;
+	visibility: visible;
+	opacity: 1;
+}
+
+.slider4
+{
+	width: 700px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 140px;
+	margin: auto;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.slider3
+{
+	width: 700px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 185px;
+	margin: auto;
+	visibility: hidden;
+	opacity: 0;
+}
+
+#slider-range
+{
+	margin: 10px;
+}
+
+.st    	
+{
+	position: absolute;
+	left: 7px;
+}
+
+.end
+{
+	position: absolute;
+	right: 0px;
+}
+
+#rangeValue
+{
+	position: relative;
+	left: 20px;
+
+}
+
+#rangeValue2
+{
+	position: relative;
+	left: 20px;
+
+}
+
+.mdl-js-slider
+{
+	background: #222;
+}
+
+.submit
+{
+	border:none;
+	background: none;
+	outline: none;
+	width: 150px;
+	height: 45px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	border:2px solid #aaa;
+	border-radius: 8px;
+	transition:.3s ease;
+	color: #888;
+	cursor: pointer;
+}
+
+.apply
+{
+	border:none;
+	background: none;
+	outline: none;
+	width: 150px;
+	height: 45px;
+	position: absolute;
+	bottom: 180px;
+	right: 20px;
+	border:2px solid #aaa;
+	border-radius: 8px;
+	color: #888;
+	cursor: pointer;
+	transition:.3s ease;
+}
+
+.pref
+{
+	display: none;
+	border:none;
+	background: none;
+	outline: none;
+	width: 150px;
+	height: 45px;
+	position: absolute;
+	bottom: 180px;
+	left: 20px;
+	border:2px solid #aaa;
+	border-radius: 8px;
+	color: #888;
+	cursor: pointer;
+	transition:.3s ease;
+}
+
+.b2,.c2,.d2
+{
+	visibility: hidden;
+}
+
+.apply:hover, .submit:hover
+{
+	border-color: #333;
+	color: #333;
+}

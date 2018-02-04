@@ -1,0 +1,140 @@
+body {
+	background: #eee;
+    font-family: 'Open Sans',sans-serif;
+}
+
+.login {
+	background: #fff;
+	width: 400px;
+	margin-right: 50px;
+	padding-bottom: 50px;
+	margin-top: 80px;
+	display: inline-block;
+}
+
+.strip-login {
+	background: #ec407a;
+	width: 100%;
+	padding-bottom: 1px;
+}
+
+.strip-login h1 {
+	color: #fff;
+	font-family: 'Roboto',sans-serif;
+	font-weight: 300;
+	margin-top: 50px;
+	margin-left: -100px;
+}
+
+input[type="email"] {
+	border: none;
+	border-bottom: 2px solid rgba(136,136,136,0.6);
+	width: 300px;
+	outline: none;
+	font-size: 18px;
+	background: none;
+	padding: 15px;
+	padding-left: 0;
+	font-weight: 300;
+	font-family: 'Roboto',sans-serif;
+	transition: all .4s ease;
+}
+
+input[type="email"]:focus,input[type="password"]:focus {
+	border-bottom: 2px solid rgba(136,136,136,1);
+	transition: all .4s ease;
+}
+
+input[type="password"] {
+	border: none;
+	border-bottom: 2px solid rgba(136,136,136,0.6);
+	width: 300px;
+	background: none;
+	outline: none;
+	font-size: 18px;
+	padding: 15px;
+	padding-left: 0;
+	font-weight: 300;
+	font-family: 'Roboto',sans-serif;
+	transition: all .4s ease;
+}
+
+label {
+	color: #222;
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+.login-submit {
+	background: #ec407a;
+	border: none;
+	font-family: 'Roboto',sans-serif;
+	cursor: pointer;
+	color: #fff;
+	padding: 15px;
+	width: 100px;
+	margin-top: 20px;
+	float: right;
+	position: relative;
+	right: 16%;
+	outline: none;
+	transition: all .4s ease;
+}
+
+.clear {
+	clear: both;
+}
+
+.login-submit:hover {
+   background: #d93c71;
+   transition: all .4s ease;
+}
+
+.reg {
+	background: #fff;
+	width: 400px;
+	padding-bottom: 50px;
+	margin-top: 80px;
+	display: inline-block;
+}
+
+.strip-reg {
+	background: #00acc2;
+	width: 100%;
+	padding-bottom: 1px;
+}
+
+.strip-reg h1 {
+	color: #fff;
+	font-family: 'Roboto',sans-serif;
+	font-weight: 300;
+	margin-top: 50px;
+	margin-left: -100px;
+}
+
+.reg-submit {
+	background: #00acc2;
+	border: none;
+	font-family: 'Roboto',sans-serif;
+	cursor: pointer;
+	color: #fff;
+	padding: 15px;
+	width: 100px;
+	margin-top: 20px;
+	float: right;
+	position: relative;
+	right: 16%;
+	outline: none;
+	transition: all .4s ease;
+}
+
+.reg-submit:hover {
+   background: #009baf;
+   transition: all .4s ease;
+}
+
+.logo {
+	width: 250px;
+	height: 100px;
+	margin-top: 80px;
+}
